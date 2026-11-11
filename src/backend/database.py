@@ -46,6 +46,7 @@ initial_activities = {
     "Programming Class": {
         "description": "Learn programming fundamentals and build software projects",
         "schedule": "Tuesdays and Thursdays, 7:00 AM - 8:00 AM",
+        "difficulty": "Beginner",
         "schedule_details": {
             "days": ["Tuesday", "Thursday"],
             "start_time": "07:00",
@@ -68,6 +69,7 @@ initial_activities = {
     "Soccer Team": {
         "description": "Join the school soccer team and compete in matches",
         "schedule": "Tuesdays and Thursdays, 3:30 PM - 5:30 PM",
+        "difficulty": "Intermediate",
         "schedule_details": {
             "days": ["Tuesday", "Thursday"],
             "start_time": "15:30",
@@ -167,6 +169,7 @@ initial_activities = {
     "Sunday Chess Tournament": {
         "description": "Weekly tournament for serious chess players with rankings",
         "schedule": "Sundays, 2:00 PM - 5:00 PM",
+        "difficulty": "Advanced",
         "schedule_details": {
             "days": ["Sunday"],
             "start_time": "14:00",
@@ -197,4 +200,3 @@ initial_teachers = [
         "role": "admin"
     }
 ]
-
