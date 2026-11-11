@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const userInfo = document.getElementById("user-info");
   const displayName = document.getElementById("display-name");
   const logoutButton = document.getElementById("logout-button");
+  const themeToggle = document.getElementById("theme-toggle");
   const loginModal = document.getElementById("login-modal");
   const loginForm = document.getElementById("login-form");
   const closeLoginModal = document.querySelector(".close-login-modal");
@@ -237,6 +238,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event listeners for authentication
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
+    document.body.dataset.theme = isDark ? "dark" : "light";
+    themeToggle.textContent = isDark ? "☀️ Light mode" : "🌙 Dark mode";
+    themeToggle.setAttribute(
+      "aria-label",
+      `Switch to ${isDark ? "light" : "dark"} mode`
+    );
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+  }
+
+  applyTheme(localStorage.getItem("theme") === "dark" ? "dark" : "light");
+  themeToggle.addEventListener("click", () => {
+    const theme = document.body.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(theme);
+    localStorage.setItem("theme", theme);
+  });
+
   loginButton.addEventListener("click", openLoginModal);
   logoutButton.addEventListener("click", logout);
   closeLoginModal.addEventListener("click", closeLoginModalHandler);
